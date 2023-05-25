@@ -1,22 +1,36 @@
-import logo from './logo.svg';
+import Introduction from './components/Introduction';
+import Button from './components/Button';
 import './App.css';
 
-function App() {
+const App = () => {
+  const title = <h3>Welcome to GoMyCode</h3>;
+  // next button handler
+  const handleNext = () => {
+    alert('Next button clicked');
+  }
+
+  // previous button handler
+  const handlePrevious = () => {
+    alert('Previous button clicked');
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {title}
+        <Introduction username="Profsain" message="I am a React Engineer" />
+        <br />
+        <div>
+          <h2>Home action button</h2>
+          <Button 
+            bgcolor="yellow" 
+            color="black" 
+            handleEvent={handleNext}
+          >Next</Button>
+
+          <Button bgcolor="#ff3091" handleEvent={handlePrevious}>Previous</Button>
+
+        </div>
       </header>
     </div>
   );
